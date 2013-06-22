@@ -17,11 +17,11 @@ import com.flurry.android.FlurryAds;
 import com.flurry.android.FlurryAdSize;
 import com.flurry.android.FlurryAgent;
 import com.flurry.android.FlurryAdListener;
-import com.flurry.example.ad.R;
+
 
 public class BannerAdsActivity extends Activity implements FlurryAdListener {
 	FrameLayout mBanner;
-	private final String kLogTag = "FlurryAdServingAPI_A";
+	private final String kLogTag = "FlurryAdServingAPI";
 	public static String apiKey ;
 
 	private String adSpace ;
@@ -83,7 +83,7 @@ public class BannerAdsActivity extends Activity implements FlurryAdListener {
 	public void onStop() {
 		super.onStop();
 		FlurryAds.removeAd(this, adSpace, mBanner);
-		FlurryAds.setAdListener(null);
+		
 		FlurryAgent.onEndSession(this);
 	}
 
